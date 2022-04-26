@@ -51,7 +51,7 @@ class KostController extends Controller
 
         $file_name = $file->getClientOriginalName();
 
-        $file->move(public_path('/images'), $file_name); 
+        $file->move(public_path('/images'), $file_name);
 
         // Jika validasi lolos buat object kost
         $new_kost = new Kost();
@@ -83,7 +83,7 @@ class KostController extends Controller
         $new_kost->alamat = $request['alamat'];
 
         $new_kost->harga = $request['harga'];
-        
+
         $new_kost->gambar = $file_name;
 
         // Save ke database
@@ -93,5 +93,11 @@ class KostController extends Controller
         // redirect ke halaman owner dan beri pesan berhasil
         return redirect("/owner")->with("tambah_kost_berhasil", "Tambah kost berhasil");
 
+    }
+
+    public function viewDetail() {
+        return view("kost.detail", [
+            "title" => "Detail Kost"
+        ]);
     }
 }

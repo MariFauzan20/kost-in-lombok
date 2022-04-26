@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('content')        
+@section('content')
     <section class="welcome py-5">
         <div class="container">
             <div class="welcoming-text">
@@ -33,7 +33,7 @@
                                 <p class="card-text f-grey">
                                     <?php
                                         $fasilitas = "";
-                                        
+
                                         if($kost->is_wifi == "tersedia"){
                                             $fasilitas .= "Wi-Fi, ";
                                         }
@@ -59,24 +59,24 @@
                                         }
 
                                         echo rtrim($fasilitas, ',');
-                                            
+
                                     ?>
                                 </p>
                                 <p class="card-price f-orange">Rp.{{$kost->harga}} /Bulan</p>
                             </div>
                             <div class="action d-flex justify-content-center align-items-center">
-                                <a href="detail-kost/{{$kost->id}}" class="btn btn-primary rounded-btn">Lihat</a>
+                                <a href="detail/{{$kost->id}}" class="btn btn-primary rounded-btn">Lihat</a>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                
+
                 </div>
             </div>
 
         </div>
     </section>
-    
+
     <div class="modal fade" id="modal-cari" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-lg">
             <div class="modal-content">
@@ -87,7 +87,7 @@
                     <div class="modal-body">
                         <!-- <h2>Masukkan kategori kost sesuai keinginan mu.</h2> -->
                         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2">
-                            
+
                             <div class="col mb-3">
                                 <label for="kota" class="form-label">Kota</label>
                                 <select class="form-select @error('kota') is-invalid @enderror" id="kota" name="kota" aria-label="Default select example" required>
@@ -101,8 +101,8 @@
                                 </select>
                                 <div class="invalid-feedback"> @error('kota') {{ $message }} @enderror</div>
                             </div>
-                    
-                        
+
+
                             <div class="col mb-3">
                                 <label for="kategori" class="form-label">Kategori</label>
                                 <select class="form-select @error('kategori') is-invalid @enderror" id="kategori" name="kategori" aria-label="Default select example" required>
@@ -112,8 +112,8 @@
                                 </select>
                                 <div class="invalid-feedback"> @error('kategori') {{ $message }} @enderror</div>
                             </div>
-                    
-                        
+
+
                             <div class="col mb-3">
                                 <label for="ukuran" class="form-label">Ukuran kamar</label>
                                 <select class="form-select @error('ukuran') is-invalid @enderror" id="ukuran" name="ukuran" aria-label="Default select example" required>
@@ -128,8 +128,8 @@
                                 </select>
                                 <div class="invalid-feedback"> @error('ukuran') {{ $message }} @enderror</div>
                             </div>
-                    
-                        
+
+
                             <div class="col mb-3">
                                 <label for="is_wifi" class="form-label">Fasilitas Wifi</label>
                                 <select class="form-select @error('is_wifi') is-invalid @enderror" id="is_wifi" name="is_wifi" aria-label="Default select example" required>
@@ -139,7 +139,7 @@
                                 </select>
                                 <div class="invalid-feedback"> @error('is_wifi') {{ $message }} @enderror</div>
                             </div>
-                
+
                             <div class="col mb-3">
                                 <label for="is_ac" class="form-label">Fasilitas AC</label>
                                 <select class="form-select @error('is_ac') is-invalid @enderror" id="is_ac" name="is_ac" aria-label="Default select example" required>
@@ -179,7 +179,7 @@
                                 </select>
                                 <div class="invalid-feedback"> @error('is_meja') {{ $message }} @enderror</div>
                             </div>
-                        
+
                             <div class="col mb-3">
                                 <label for="is_lemari" class="form-label">Lemari</label>
                                 <select class="form-select @error('is_lemari') is-invalid @enderror" id="is_lemari" name="is_lemari" aria-label="Default select example" required>
