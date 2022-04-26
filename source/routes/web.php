@@ -36,4 +36,7 @@ Route::get('/owner', [KostController::class, "ownerView"]);
 Route::get('/tambah-kost', [KostController::class, "tambahView"]);
 Route::post('/tambah-kost', [KostController::class, "store"]);
 
+// Route detail kost
+Route::get('/detail/{id}', [KostController::class, "viewDetail"]);
+
 
