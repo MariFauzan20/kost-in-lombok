@@ -118,6 +118,17 @@
     border-bottom: 1px solid #CCCCCC;
 }
 
+.preview-image img {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.fasilitas li {
+    font-weight: 500;
+}
+
 @media (max-width: 992px) {
     .nav-active::after {
         bottom: 0;
