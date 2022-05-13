@@ -129,4 +129,10 @@ class KostController extends Controller
             'kost'=> $kost
         ]);
     }
+
+    public function editProfile() {
+        return view("kost.editProfile", [
+            "title" => "Edit Profile"
+        ]);
+    }
 }
