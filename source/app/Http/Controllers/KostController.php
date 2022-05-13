@@ -100,4 +100,10 @@ class KostController extends Controller
             "title" => "Detail Kost"
         ]);
     }
+
+    public function editProfile() {
+        return view("kost.editProfile", [
+            "title" => "Edit Profile"
+        ]);
+    }
 }

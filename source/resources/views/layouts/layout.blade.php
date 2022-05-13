@@ -40,13 +40,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-3">
-                        <a class="nav-link f-medium nav-active" href="">Home</a>
+                        <a class="nav-link f-medium nav-active" href="/">Home</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link f-medium" href="">Simpan</a>
+                        <a class="nav-link f-medium" href="/simpan">Simpan</a>
                     </li>
                     <li class="nav-item me-3">
-                        <a class="nav-link f-medium" href="">Profile</a>
+                        <a class="nav-link f-medium" href="/profile">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +54,7 @@
     </nav>
 
     @yield('content')
-   
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
