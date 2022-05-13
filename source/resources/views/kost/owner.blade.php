@@ -7,6 +7,12 @@
         </div>
     @endif
 
+    @if(session()->has('edit_kost_berhasil'))
+        <div class="container alert alert-success text-center mt-3" role="alert">
+            {{ session('edit_kost_berhasil')}}
+        </div>
+    @endif
+
     <section class="mt-5 pb-5">
         <div class="container">
             <div class="page-title">
@@ -24,7 +30,7 @@
                     @foreach($kostan as $kost)
                     <div class="col">
                         <div class="card">
-                            <img src="images/{{$kost->gambar}}" class="card-img-top" alt="">
+                            <img src="images/kost/{{$kost->gambar}}" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">{{$kost->nama}}</h5>
                                 <p class="card-text f-black">{{$kost->kota}}</p>
@@ -64,7 +70,7 @@
                                 <p class="card-price f-orange">Rp.{{$kost->harga}} /Bulan</p>
                             </div>
                             <div class="action d-flex flex-column justify-content-center align-items-center">
-                                <a href="" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
+                                <a href="/edit/{{$kost->id}}" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
                                 <a href="" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
                             </div>
                         </div>
