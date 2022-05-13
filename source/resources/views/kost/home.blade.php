@@ -25,7 +25,7 @@
                     @foreach($kostan as $kost)
                     <div class="col">
                         <div class="card">
-                            <img src='images/{{$kost->gambar}}' class="card-img-top" alt="">
+                            <img src='images/kost/{{$kost->gambar}}' class="card-img-top" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">{{$kost->nama}}</h5>
                                 <p class="card-text f-black">{{$kost->kota}}</p>

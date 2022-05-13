@@ -39,5 +39,14 @@ Route::post('/tambah-kost', [KostController::class, "store"]);
 // Route detail kost
 Route::get('/detail/{id}', [KostController::class, "viewDetail"]);
 
+
+// route edit kost
+Route::get('/edit/{id}', [KostController::class, "editView"]);
+Route::post('/edit/{id}', [KostController::class, "edit"]);
+
+
+
+
 // Route Edit Profile
 Route::get('/edit-profile/{id}', [KostController::class, "editProfile"]);
+

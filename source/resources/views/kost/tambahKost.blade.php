@@ -66,6 +66,7 @@
                 <option value="5x4">5x4</option>
                 <option value="5x5">5x5</option>
                 <option value="lebih dari 5x5">lebih dari 5x5</option>
+                <option value="kamar penuh">Kamar penuh</option>
             </select>
             <div class="invalid-feedback"> @error('ukuran') {{ $message }} @enderror</div>
         </div>
