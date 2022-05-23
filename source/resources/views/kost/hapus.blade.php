@@ -1,20 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-    @if(session()->has('berhasil_ditambah'))
-        <div class="container alert alert-success text-center mt-3" role="alert">
-            {{ session('berhasil_ditambah')}}
-        </div>
-    @endif
-    @if(session()->has('sudah_ada'))
-        <div class="container alert alert-danger text-center mt-3" role="alert">
-            {{ session('sudah_ada')}}
-        </div>
-    @endif
     <div class="container mt-3">
         <div class="row">
             <div class="col">
-                <h1 class="f-green f-20 f-bold">Detail Kost</h1>
+                <h1 class="f-green f-20 f-bold">Hapus Kost</h1>
             </div>
         </div>
         <div class="row mt-4">
@@ -50,13 +40,33 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col d-flex">
-                        <a href="https://wa.me/{{$kost->no_hp}}?text=Permisi%20saya%20tertarik%20dengan%20kostnya%20kak,%20apakah%20masih%20ada%20kamar%20yang%20kosong?" target="_blank" class="btn btn-primary btn-sm me-3 rounded-btn" style="font-size: 1rem; width:200px;">Hubungi Pemilik</a>
-                        <form action="/detail/{{$kost->id}}" method="post">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-success btn-sm rounded-btn" style="font-size: 1rem;">Simpan</button>
-                        </form>
+                        <button class="btn btn-danger btn-sm me-3 rounded-btn" style="font-size: 1rem;" data-bs-toggle="modal" data-bs-target="#delete">Hapus Kost</button>
+                        <button class="btn btn-outline-secondary btn-sm rounded-btn" style="font-size: 1rem;">Kembali</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hapus -->
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Peringatan Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Anda yakin ingin menghapus kost ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary rounded-btn" data-bs-dismiss="modal">Tidak</button>
+                <form action="/hapus-kost/{{ $kost->id }}" method="POST">
+                    @method('delete')
+                    @csrf
+                    <button type="submit" class="btn btn-danger rounded-btn">Hapus</button>
+                </form>
+            </div>
             </div>
         </div>
     </div>

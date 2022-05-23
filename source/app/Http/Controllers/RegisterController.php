@@ -19,23 +19,18 @@ class RegisterController extends Controller
     public function store(Request $request){
         // Validasi data
         $request->validate([
-            "username" =>'required|unique:users,username|max:128',
+            "username" =>'required|unique:users,username|max:16',
             'email' => 'required|unique:users,email|email:dns',
-            "password" => 'required|min:5|max:128',
+            "password" => 'required|min:5|max:20',
         ]);
 
         
         // jika validasi lolos, buat user baru
         $new_user = new User();
-        
         $new_user->username = $request['username'];
-        
         $new_user->email = $request['email'];
-        
         $new_user->password = bcrypt($request['password']);
-        
         $new_user->is_owner = isset($request['check-owner']) ? true : false;
-        
         $new_user->save();
 
         // redirect ke halaman login dan beri pesan
