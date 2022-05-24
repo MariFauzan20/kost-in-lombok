@@ -66,7 +66,6 @@
                 <option value="5x4">5x4</option>
                 <option value="5x5">5x5</option>
                 <option value="lebih dari 5x5">lebih dari 5x5</option>
-                <option value="kamar penuh">Kamar penuh</option>
             </select>
             <div class="invalid-feedback"> @error('ukuran') {{ $message }} @enderror</div>
         </div>
@@ -155,11 +154,18 @@
             <div class="invalid-feedback"> @error('gambar') {{ $message }} @enderror</div>
         </div>
 
+        <div class="mb-3">
+            <label for="no_hp" class="form-label">No Handphone (Whatsapp)</label>
+            <input type="text" name="no_hp"  class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" placeholder="Masukkan no HP yang bisa dihubungi" value="{{ old('no_hp') }}">
+            <div class="invalid-feedback"> @error('no_hp') {{ $message }} @enderror</div>
+        </div>
+        
         <div class="buttons mt-4">
             <button type="submit" class="btn btn-primary rounded-btn">Tambah</button>
             <a href="{{ url()->previous() }}" class="btn btn-outline-primary rounded-btn">Kembali</a>
             <div class="invalid-feedback"> @error('') {{ $message }} @enderror</div>
         </div>
+
 
       </form>
     </div>

@@ -40,6 +40,20 @@ class LoginController extends Controller
         // jika username dan password tidak sesuuai kembalikan ke halaman login
         return redirect('/login')->with('invalid', 'username atau password salah');
 
-
     }
+
+    // Fungsi Autentikasi Logout
+    public function logout(Request $request){
+        // Logout-kan user
+        Auth::logout();
+        
+        // Hapus session 
+        $request->session()->invalidate();
+        
+        // Buat token baru
+        $request->session()->regenerateToken();
+ 
+        return redirect('/login');
+    }
+
 }

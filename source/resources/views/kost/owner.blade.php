@@ -13,11 +13,32 @@
         </div>
     @endif
 
+    @if(session()->has('bukan_kost_anda'))
+        <div class="container alert alert-danger text-center mt-3" role="alert">
+            {{ session('bukan_kost_anda')}}
+        </div>
+    @endif
+
+    @if(session()->has('id_user_tidak_sesuai'))
+        <div class="container alert alert-danger text-center mt-3" role="alert">
+            {{ session('id_user_tidak_sesuai')}}
+        </div>
+    @endif
+
+    @if(session()->has('hapus-success'))
+        <div class="container alert alert-success text-center mt-3" role="alert">
+            {{ session('hapus-success')}}
+        </div>
+    @endif
+
     <section class="mt-5 pb-5">
         <div class="container">
-            <div class="page-title">
-                <div class="d-flex align-items-center">
-                    <h2 class="mt-1 f-green f-20 f-bold">Atur Marchendise</h2>
+            <div class="page-title"> 
+                <div class="d-flex align-items-start justify-content-between">
+                    <div class="welcoming-text">
+                        <h1 class="f-24 f-black f-bold">Hi {{Auth::user()->username}}, Selamat datang kembali</h1>
+                        <p class="f-grey">Mari atur atau update kost mu sekarang</p>
+                    </div>
                     <a class="ms-4 btn btn-primary rounded-btn d-flex" href="/tambah-kost">
                         <i class="ri-add-line" style="margin-top:-2px; font-size:20px;"></i>
                         <span style="margin-top:2px;">Tambah</span>
@@ -44,19 +65,19 @@
                                         }
 
                                         if($kost->is_ac == "tersedia"){
-                                            $fasilitas .= "AC, ";
+                                            $fasilitas .= "AC,";
                                         }
 
                                         if($kost->is_toilet == "di dalam"){
-                                            $fasilitas .= "Toilet di Dalam, ";
+                                            $fasilitas .= "Toilet di Dalam,";
                                         }
 
                                         if($kost->is_kasur == "tersedia"){
-                                            $fasilitas .= "Kasur, ";
+                                            $fasilitas .= "Kasur,";
                                         }
 
                                         if($kost->is_meja == "tersedia"){
-                                            $fasilitas .= "Meja, ";
+                                            $fasilitas .= "Meja,";
                                         }
 
                                         if($kost->is_lemari == "tersedia"){
@@ -71,7 +92,7 @@
                             </div>
                             <div class="action d-flex flex-column justify-content-center align-items-center">
                                 <a href="/edit/{{$kost->id}}" class="btn btn-primary rounded-btn" style="width: 120px;">Ubah</a>
-                                <a href="" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
+                                <a href="/hapus-kost/{{$kost->id}}" class="btn btn-danger rounded-btn mt-2" style="width: 120px;">Hapus</a>
                             </div>
                         </div>
                     </div>

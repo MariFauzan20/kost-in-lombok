@@ -1,10 +1,22 @@
 @extends('layouts.layout')
 
 @section('content')
+    @if(session()->has('id_user_tidak_sesuai'))
+        <div class="container alert alert-danger text-center mt-3" role="alert">
+            {{ session('id_user_tidak_sesuai')}}
+        </div>
+    @endif
+
+    @if(session()->has('not_permit'))
+        <div class="container alert alert-danger text-center mt-3" role="alert">
+            {{ session('not_permit')}}
+        </div>
+    @endif
+
     <section class="welcome py-5">
         <div class="container">
             <div class="welcoming-text">
-                <h1 class="f-24 f-black f-bold">Bingung Cari Kost di Lombok?</h1>
+                <h1 class="f-24 f-black f-bold">Hi {{Auth::user()->username}}, bingung Cari Kost di Lombok?</h1>
                 <p class="f-grey">Cari kost di lombok sesuai selera dan dompet kamu.</p>
             </div>
             <div class="input-group search">
@@ -35,23 +47,23 @@
                                         $fasilitas = "";
 
                                         if($kost->is_wifi == "tersedia"){
-                                            $fasilitas .= "Wi-Fi, ";
+                                            $fasilitas .= "Wi-Fi,";
                                         }
 
                                         if($kost->is_ac == "tersedia"){
-                                            $fasilitas .= "AC, ";
+                                            $fasilitas .= "AC,";
                                         }
 
                                         if($kost->is_toilet == "di dalam"){
-                                            $fasilitas .= "Toilet di Dalam, ";
+                                            $fasilitas .= "Toilet di Dalam,";
                                         }
 
                                         if($kost->is_kasur == "tersedia"){
-                                            $fasilitas .= "Kasur, ";
+                                            $fasilitas .= "Kasur,";
                                         }
 
                                         if($kost->is_meja == "tersedia"){
-                                            $fasilitas .= "Meja, ";
+                                            $fasilitas .= "Meja,";
                                         }
 
                                         if($kost->is_lemari == "tersedia"){
@@ -80,39 +92,14 @@
     <div class="modal fade" id="modal-cari" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-lg">
             <div class="modal-content">
-                <form action="" method="GET">
+                <form action="/hasil-rekomendasi" method="POST">
+                    @csrf
                     <div class="modal-header">
                         <h5 class="modal-title w-100 text-center f-green" id="exampleModalLabel">Cari Kost</h5>
                     </div>
                     <div class="modal-body">
                         <!-- <h2>Masukkan kategori kost sesuai keinginan mu.</h2> -->
                         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2">
-
-                            <div class="col mb-3">
-                                <label for="kota" class="form-label">Kota</label>
-                                <select class="form-select @error('kota') is-invalid @enderror" id="kota" name="kota" aria-label="Default select example" required>
-                                    <option selected value="">Pilih kota tempat Kost</option>
-                                    <option value="Mataram">Mataram</option>
-                                    <option value="Narmada">Narmada</option>
-                                    <option value="Praya">Praya</option>
-                                    <option value="Pancor">Pancor</option>
-                                    <option value="Mandalika">Mandalika</option>
-                                    <option value="Gunung Sari">Gunung Sari</option>
-                                </select>
-                                <div class="invalid-feedback"> @error('kota') {{ $message }} @enderror</div>
-                            </div>
-
-
-                            <div class="col mb-3">
-                                <label for="kategori" class="form-label">Kategori</label>
-                                <select class="form-select @error('kategori') is-invalid @enderror" id="kategori" name="kategori" aria-label="Default select example" required>
-                                    <option selected value="">Pilih kategori</option>
-                                    <option value="Pria">Pria</option>
-                                    <option value="Wanita">Wanita</option>
-                                </select>
-                                <div class="invalid-feedback"> @error('kategori') {{ $message }} @enderror</div>
-                            </div>
-
 
                             <div class="col mb-3">
                                 <label for="ukuran" class="form-label">Ukuran kamar</label>

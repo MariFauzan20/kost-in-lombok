@@ -32,7 +32,7 @@
             <select class="form-select @error('kategori') is-invalid @enderror" id="kategori" name="kategori" aria-label="Default select example">
                 <option value="">Pilih kategori</option>
                 <option value="Pria" "@if(($kost->kategori) === 'Pria') {{ 'selected' }} @endif">Pria</option>
-                <option value="Wanita" "@if(($kost->katogori) === 'Wanita') {{ 'selected' }} @endif">Wanita</option>
+                <option value="Wanita" "@if(($kost->kategori) === 'Wanita') {{ 'selected' }} @endif">Wanita</option>
             </select>
             <div class="invalid-feedback"> @error('kategori') {{ $message }} @enderror</div>
         </div>
@@ -148,6 +148,13 @@
             <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" accept="image/*" >
             <div class="invalid-feedback"> @error('gambar') {{ $message }} @enderror</div>
         </div>
+
+        <div class="mb-3">
+            <label for="no_hp" class="form-label">No Handphone (Whatsapp)</label>
+            <input type="text" name="no_hp"  class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" placeholder="Masukkan no HP yang bisa dihubungi" value="{{ $kost->no_hp }}">
+            <div class="invalid-feedback"> @error('no_hp') {{ $message }} @enderror</div>
+        </div>
+        
 
         <div class="buttons mt-4">
             <button type="submit" class="btn btn-primary rounded-btn">Edit</button>
