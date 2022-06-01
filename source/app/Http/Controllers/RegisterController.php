@@ -9,21 +9,20 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     // View halaman login
-    public function index(){
+    public function registerView(){
         return view("register.register",[
             "title" => "Register"
         ]);
     }
 
     // fungsi registrasi user baru
-    public function store(Request $request){
+    public function registerUser(Request $request){
         // Validasi data
         $request->validate([
             "username" =>'required|unique:users,username|max:16',
             'email' => 'required|unique:users,email|email:dns',
             "password" => 'required|min:5|max:20',
         ]);
-
         
         // jika validasi lolos, buat user baru
         $new_user = new User();

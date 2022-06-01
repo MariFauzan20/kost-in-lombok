@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     // View halaman login
-    public function index(){
+    public function loginView(){
         return view("login.login", [
             "title" => "Login"
         ]);
     }
 
     // fungsi autentikasi login
-    public function auth(Request $request){
+    public function autentikasi(Request $request){
         // validasi input value
         $credentials = $request->validate([
             "username"=>"required",
