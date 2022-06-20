@@ -21,32 +21,26 @@ class DatabaseSeeder extends Seeder
         // Seed untuk user data owner
         User::create([
             'username' => 'ismar',
-            'email' => "ismar@gamil.com",
+            'email' => "ismar@gmail.com",
             'password'=> bcrypt("12345"),
             'is_owner' => true
         ]);
 
         User::create([
-            'username' => 'apuandi',
-            'email' => "apw@gamil.com",
+            'username' => 'mari',
+            'email' => "mari@gmail.com",
             'password'=> bcrypt("12345"),
             'is_owner' => true
         ]);
         
         // Seed untuk user data pencari kost
         User::create([
-            'username' => 'anak_ismar',
-            'email' => "anak_ismar@gamil.com",
+            'username' => 'sendy',
+            'email' => "sendy@gamil.com",
             'password'=> bcrypt("12345"),
             'is_owner' => false
         ]);
 
-        User::create([
-            'username' => 'anak_apuandi',
-            'email' => "anak_apw@gamil.com",
-            'password'=> bcrypt("12345"),
-            'is_owner' => false
-        ]);
 
         // Seed untuk data kost
         // $nama = ["Taman Cendana Indah", "Sevila Residence","Mammis Residence","Nirwana Bojong","Mutiara Korelet II","Mutiara Panongan","Pilar Imanan Residence","Triraksa Village 2", "Neo Rajeg City", "Neo Lombok"];

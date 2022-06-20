@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\KostController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FavoritController;
 use App\Http\Controllers\RekomendasiController;
 
@@ -20,15 +18,15 @@ use App\Http\Controllers\RekomendasiController;
 */
 
 // Route Login
-Route::get('/login', [LoginController::class, "loginView"])->name('login');
-Route::post('/login', [LoginController::class, "autentikasi"]);
+Route::get('/login', [UserController::class, "loginView"])->name('login');
+Route::post('/login', [UserController::class, "autentikasi"]);
 
 // Route Register
-Route::get('/register', [RegisterController::class, "registerView"]);
-Route::post('/register', [RegisterController::class, "registerUser"]);
+Route::get('/register', [UserController::class, "registerView"]);
+Route::post('/register', [UserController::class, "registerUser"]);
 
 // Route Logout
-Route::post('/logout', [LoginController::class, "logout"]);
+Route::post('/logout', [UserController::class, "logout"]);
 
 
 // Route Home
@@ -55,8 +53,8 @@ Route::delete('/hapus-kost/{id}', [KostController::class, "hapusKost"]);
 
 
 // Route Edit Profile
-Route::get('/edit-profile/{id}', [ProfileController::class, "editProfile"])->middleware('auth');
-Route::put('/edit-profile/{id}', [ProfileController::class, "edit"]);
+Route::get('/edit-profile/{id}', [UserController::class, "editProfileView"])->middleware('auth');
+Route::put('/edit-profile/{id}', [UserController::class, "editProfile"]);
 
 // Route favorit
 Route::get('/favorit', [FavoritController::class, "favoritView"])->middleware('auth');

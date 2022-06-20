@@ -25,15 +25,10 @@ class RekomendasiController extends Controller
         // Ambil input user sebagai array
         $arr_input = [
             [
-                "id"=>0,
-                "ukuran"=>$request->ukuran, 
-                "wifi"=>$request->is_wifi,
-                "toilet"=>$request->is_toilet,
-                "kasur"=>$request->is_kasur,
-                "meja"=>$request->is_meja,
-                "lemari"=>$request->is_lemari,
-                "harga"=>$request->harga,
-                "jarak"=> 0
+                "id"=>0,"ukuran"=>$request->ukuran, "wifi"=>$request->is_wifi,
+                "toilet"=>$request->is_toilet,"kasur"=>$request->is_kasur,
+                "meja"=>$request->is_meja,"lemari"=>$request->is_lemari,
+                "harga"=>$request->harga,"jarak"=> 0
             ]
         ];
 
@@ -42,15 +37,10 @@ class RekomendasiController extends Controller
 
         foreach(Kost::all() as $kost){
             $to_append = [
-                "id"=>$kost->id,
-                "ukuran"=>$kost->ukuran, 
-                "wifi"=>$kost->is_wifi,
-                "toilet"=>$kost->is_toilet,
-                "kasur"=>$kost->is_kasur,
-                "meja"=>$kost->is_meja,
-                "lemari"=>$kost->is_lemari,
-                "harga"=>$kost->harga,
-                "jarak"=> 0
+                "id"=>$kost->id, "ukuran"=>$kost->ukuran, "wifi"=>$kost->is_wifi,
+                "toilet"=>$kost->is_toilet,"kasur"=>$kost->is_kasur,
+                "meja"=>$kost->is_meja,"lemari"=>$kost->is_lemari,
+                "harga"=>$kost->harga,"jarak"=> 0
             ];
             array_push($arr_kost,$to_append);
         }
