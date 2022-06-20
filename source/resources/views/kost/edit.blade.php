@@ -46,7 +46,7 @@
                 <option value="4" "@if(($kost->jumlah_kamar) === '4') {{ 'selected' }} @endif">4</option>
                 <option value="5" "@if(($kost->jumlah_kamar) === '5') {{ 'selected' }} @endif">5</option>
                 <option value="lebih dari 5" "@if(($kost->jumlah_kamar) === 'lebih dari 5') {{ 'selected' }} @endif">lebih dari 5</option>
-                <option value="kamar penuh" "@if(($kost->jumlah_kamar) === '1') {{ 'selected' }} @endif">Kamar penuh</option>
+                <option value="kamar penuh" "@if(($kost->jumlah_kamar) === 'kamar penuh') {{ 'selected' }} @endif">Kamar penuh</option>
             </select>
             <div class="invalid-feedback"> @error('jumlah_kamar') {{ $message }} @enderror</div>
         </div>

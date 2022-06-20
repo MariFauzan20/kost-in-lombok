@@ -46,8 +46,10 @@
                 </div>
             </div>
             <div class="list-items mt-5">
+                @if(count($kostan) == 0)
+                    <div class="text-center">Masih Kosong Nih Kostannya :')</div>
+                @endif
                 <div class="row gy-5 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-
                     @foreach($kostan as $kost)
                     <div class="col">
                         <div class="card">
