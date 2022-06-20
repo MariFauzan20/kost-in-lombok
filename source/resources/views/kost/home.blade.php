@@ -121,8 +121,8 @@
                                 <label for="is_wifi" class="form-label">Fasilitas Wifi</label>
                                 <select class="form-select @error('is_wifi') is-invalid @enderror" id="is_wifi" name="is_wifi" aria-label="Default select example" required>
                                     <option selected value="">Pilih ketersediaan Wifi</option>
-                                    <option value="tersedia">Tersedia</option>
-                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                    <option value="tersedia">Dengan Wifi</option>
+                                    <option value="tidak tersedia">Tanpa Wifi</option>
                                 </select>
                                 <div class="invalid-feedback"> @error('is_wifi') {{ $message }} @enderror</div>
                             </div>
@@ -131,8 +131,8 @@
                                 <label for="is_ac" class="form-label">Fasilitas AC</label>
                                 <select class="form-select @error('is_ac') is-invalid @enderror" id="is_ac" name="is_ac" aria-label="Default select example" required>
                                     <option selected value="">Pilih ketersediaan AC</option>
-                                    <option value="tersedia">Tersedia</option>
-                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                    <option value="tersedia">Dengan AC</option>
+                                    <option value="tidak tersedia">Tanpa AC</option>
                                 </select>
                                 <div class="invalid-feedback"> @error('is_ac') {{ $message }} @enderror</div>
                             </div>
@@ -151,8 +151,8 @@
                                 <label for="is_kasur" class="form-label">Kasur</label>
                                 <select class="form-select @error('is_kasur') is-invalid @enderror" id="is_kasur" name="is_kasur" aria-label="Default select example" required>
                                     <option selected value="">Pilih ketersediaan kasur</option>
-                                    <option value="tersedia">Tersedia</option>
-                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                    <option value="tersedia">Dengan kasur</option>
+                                    <option value="tidak tersedia">Tanpa kasur</option>
                                 </select>
                                 <div class="invalid-feedback"> @error('is_kasur') {{ $message }} @enderror</div>
                             </div>
@@ -161,8 +161,8 @@
                                 <label for="is_meja" class="form-label">Meja</label>
                                 <select class="form-select @error('is_meja') is-invalid @enderror" id="is_meja" name="is_meja" aria-label="Default select example" required>
                                     <option selected value="">Pilih ketersediaan meja</option>
-                                    <option value="tersedia">Tersedia</option>
-                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                    <option value="tersedia">Dengan meja</option>
+                                    <option value="tidak tersedia">Tanpa meja</option>
                                 </select>
                                 <div class="invalid-feedback"> @error('is_meja') {{ $message }} @enderror</div>
                             </div>
@@ -171,8 +171,8 @@
                                 <label for="is_lemari" class="form-label">Lemari</label>
                                 <select class="form-select @error('is_lemari') is-invalid @enderror" id="is_lemari" name="is_lemari" aria-label="Default select example" required>
                                     <option selected value="">Pilih ketersediaan lemari</option>
-                                    <option value="tersedia">Tersedia</option>
-                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                    <option value="tersedia">Dengan lemari</option>
+                                    <option value="tidak tersedia">Tanpa lemari</option>
                                 </select>
                                 <div class="invalid-feedback"> @error('is_lemari') {{ $message }} @enderror</div>
                             </div>

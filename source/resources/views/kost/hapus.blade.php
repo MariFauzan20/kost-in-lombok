@@ -9,7 +9,7 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <img class="img-thumbnail" src="/images/kost/{{$kost->gambar}}" alt="">
+                <img src="/images/kost/{{$kost->gambar}}" alt="" style="width: 500px; height:500px; object-fit:cover;">
             </div>
             <div class="col ms-4">
                 <div class="row">
@@ -41,7 +41,7 @@
                 <div class="row mt-3">
                     <div class="col d-flex">
                         <button class="btn btn-danger btn-sm me-3 rounded-btn" style="font-size: 1rem;" data-bs-toggle="modal" data-bs-target="#delete">Hapus Kost</button>
-                        <button class="btn btn-outline-secondary btn-sm rounded-btn" style="font-size: 1rem;">Kembali</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-outline-primary rounded-btn">Kembali</a>
                     </div>
                 </div>
             </div>
