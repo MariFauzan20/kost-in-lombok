@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class KostController extends Controller
 {
     // View halaman home(daftar kost)
-    public function index(){
+    public function homeView(){
         
         // Cek role user 
         if(Auth::user()->is_owner == 1){
@@ -23,8 +23,16 @@ class KostController extends Controller
             "kostan" => $kost,
             "title" => "Home"
         ]);
-     
+    }
 
+    // Fungsi Halaman detail Kost
+    public function detailView($id) {
+
+        $kost = Kost::findOrFail($id);
+        return view("kost.detail", [
+            "title" => "Detail Kost",
+            'kost'=> $kost
+        ]);
     }
 
     // View halaman owner
@@ -75,7 +83,6 @@ class KostController extends Controller
                 "title" => "Edit Kost"
             ]);
         }
-
     }
 
     // View halaman edit kost
@@ -94,7 +101,7 @@ class KostController extends Controller
 
 
     // Fungsi untuk menambahkan kost
-    public function store(Request $request){
+    public function tambahKost(Request $request){
         // Validasi input user
         $request->validate([
             "nama"=>"required", "kota"=>"required","kategori"=>"required",
@@ -129,7 +136,7 @@ class KostController extends Controller
     }
 
     // Fungsi untuk meng-edit kost
-    public function edit(Request $request, $id){
+    public function editKost(Request $request, $id){
         // Validasi input user
         $request->validate([
             "nama"=>"required", "kota"=>"required","kategori"=>"required",
@@ -171,7 +178,7 @@ class KostController extends Controller
     }
 
     // Fungsi Hapus kost
-    public function destroy($id){
+    public function hapusKost($id){
         // cari kost yang ingin dihapus
         $kost = Kost::findOrFail($id);
 
@@ -179,14 +186,5 @@ class KostController extends Controller
         $kost->delete();
 
         return redirect('/owner')->with('hapus-success', 'Kost berhasil dihapus');
-    }
-
-    public function viewDetail($id) {
-
-        $kost = Kost::findOrFail($id);
-        return view("kost.detail", [
-            "title" => "Detail Kost",
-            'kost'=> $kost
-        ]);
     }
 }

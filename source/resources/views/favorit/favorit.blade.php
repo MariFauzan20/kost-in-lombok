@@ -12,6 +12,9 @@
                 <h2 class="f-green f-20 f-bold">Wishlist Kost</h2>
             </div>
             <div class="list-items mt-4">
+                @if(count($kostan) == 0)
+                    <div class="text-center">Belum ada Kost favorit</div>
+                @endif
                 <div class="row gy-5 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                     @foreach($kostan as $kost)
                     <div class="col">

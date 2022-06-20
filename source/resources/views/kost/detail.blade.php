@@ -19,7 +19,7 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <img class="img-thumbnail" src="/images/kost/{{$kost->gambar}}" alt="">
+                <img src="/images/kost/{{$kost->gambar}}" alt="" style="width: 500px; height:500px; object-fit:cover;">
             </div>
             <div class="col ms-4">
                 <div class="row">

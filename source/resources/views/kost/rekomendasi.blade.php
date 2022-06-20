@@ -5,6 +5,7 @@
         <div class="container">
             <div class="page-title">
                 <h2 class="f-green f-20 f-bold">Rekomendasi Hasil Pencarian</h2>
+                <p class="f-black f-16">Menampilkan 10 rekomendasi kost</p>
             </div>
             <div class="list-order mt-5">
                 @foreach($kost_rekomendasi as $kost)
